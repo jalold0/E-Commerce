@@ -12,11 +12,10 @@ export function CookieBanner() {
 
   React.useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (!stored) {
-      // Sahifa to'liq yuklangandan keyin ko'rsatish
-      const t = setTimeout(() => setVisible(true), 1500);
-      return () => clearTimeout(t);
-    }
+    if (stored) return undefined;
+    // Sahifa to'liq yuklangandan keyin ko'rsatish
+    const t = setTimeout(() => setVisible(true), 1500);
+    return () => clearTimeout(t);
   }, []);
 
   const accept = (mode: 'all' | 'essential') => {

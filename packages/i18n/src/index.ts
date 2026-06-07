@@ -7,14 +7,29 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'uz';
 
-export const messages: Record<Locale, Record<string, string>> = {
-  uz: uz as Record<string, string>,
-  ru: ru as Record<string, string>,
-  en: en as Record<string, string>,
+// next-intl uses nested key structure (common.appName, nav.cart, ...)
+// shu sababli `any` qabul qilamiz — next-intl o'zi tip xavfsizligini ta'minlaydi.
+export type Messages = Record<string, unknown>;
+
+export const messages: Record<Locale, Messages> = {
+  uz: uz as Messages,
+  ru: ru as Messages,
+  en: en as Messages,
 };
 
+// Yengil t() helper — server-side fallback uchun, dot-notation kalit (common.appName)
 export function t(key: string, locale: Locale = defaultLocale): string {
-  return messages[locale]?.[key] ?? messages[defaultLocale]?.[key] ?? key;
+  const parts = key.split('.');
+  let cur: unknown = messages[locale] ?? messages[defaultLocale];
+  for (const p of parts) {
+    if (cur && typeof cur === 'object' && p in (cur as Record<string, unknown>)) {
+      cur = (cur as Record<string, unknown>)[p];
+    } else {
+      cur = undefined;
+      break;
+    }
+  }
+  return typeof cur === 'string' ? cur : key;
 }
 
 export function pickLocalized<T extends Partial<Record<Locale, string>>>(

@@ -5,7 +5,7 @@ import { CheckCircle2, MapPin, Package, Phone, Search, Truck } from 'lucide-reac
 import * as React from 'react';
 
 import { ORDER_STATUS_LABELS, ORDER_STATUS_TONE } from '../../../lib/order-status';
-import { formatDate, formatDateTime } from '../../../lib/format';
+import { formatDateTime } from '../../../lib/format';
 
 // Mock — order tracking endpointi backend tayyor bo'lganda
 function findOrder(query: string) {

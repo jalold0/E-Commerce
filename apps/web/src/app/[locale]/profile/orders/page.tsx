@@ -5,7 +5,7 @@ import { Package } from 'lucide-react';
 import Link from 'next/link';
 
 import { ORDER_STATUS_LABELS, ORDER_STATUS_TONE } from '../../../../lib/order-status';
-import { formatDate, formatMoney } from '../../../../lib/format';
+import { formatDate as fmtDate, formatMoney } from '../../../../lib/format';
 
 // Mock buyurtmalar — backend tayyor bo'lganda useQuery'ga ko'chiriladi
 const MOCK_ORDERS: Array<{
@@ -44,7 +44,7 @@ export default function MyOrdersPage() {
                   {o.number}
                 </Link>
                 <div className="mt-0.5 text-xs text-muted-foreground">
-                  {formatDate(o.placedAt)} · {o.itemsCount} ta mahsulot
+                  {fmtDate(o.placedAt)} · {o.itemsCount} ta mahsulot
                 </div>
               </div>
               <StatusBadge tone={ORDER_STATUS_TONE[o.status]}>{ORDER_STATUS_LABELS[o.status]}</StatusBadge>

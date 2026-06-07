@@ -13,9 +13,6 @@ const nextConfig = {
       { protocol: 'http', hostname: 'localhost' },
     ],
   },
-  experimental: {
-    typedRoutes: true,
-  },
 };
 
 export default withNextIntl(nextConfig);

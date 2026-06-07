@@ -62,7 +62,6 @@ export function ProductCard({
   price,
   oldPrice,
   currency = 'UZS',
-  locale = 'uz-UZ',
   rating,
   reviewCount,
   badge,

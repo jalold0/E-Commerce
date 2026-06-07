@@ -25,8 +25,6 @@ export function CartBadge() {
 }
 
 export function WishlistBadge() {
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
-  // Wishlist count uchun ham — keyin kerak bo'lganda yana shu pattern
+  // Placeholder — kelajakda wishlist count ko'rsatish uchun
   return null;
 }
