@@ -6,7 +6,15 @@ import { useLocale } from 'next-intl';
 
 import { NewsletterForm } from '../../components/layout/newsletter';
 import { ProductCardClient } from '../../components/product/product-card-client';
-import { brands, categories, pickLocale, productImage, products, type Locale } from '../../lib/mock-data';
+import { InstallHeroCard } from '../../components/pwa/sticky-install-bar';
+import {
+  brands,
+  categories,
+  pickLocale,
+  productImage,
+  products,
+  type Locale,
+} from '../../lib/mock-data';
 
 export default function HomePage() {
   const locale = useLocale() as Locale;
@@ -16,7 +24,7 @@ export default function HomePage() {
   return (
     <div className="space-y-12 md:space-y-16">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-rose-600 to-orange-500 px-6 py-12 text-primary-foreground md:px-12 md:py-20">
+      <section className="from-primary text-primary-foreground relative overflow-hidden rounded-3xl bg-gradient-to-br via-rose-600 to-orange-500 px-6 py-12 md:px-12 md:py-20">
         <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
         <div className="relative grid items-center gap-8 md:grid-cols-2">
@@ -30,8 +38,8 @@ export default function HomePage() {
               <span className="text-white/90">moda va go&apos;zallik</span> bozori
             </h1>
             <p className="max-w-md text-base text-white/80 md:text-lg">
-              Kiyim-kechak, poyabzal, atirlar, kosmetika va aksessuarlar — bitta joyda. Tezkor yetkazib berish va 14
-              kunda qaytarish.
+              Kiyim-kechak, poyabzal, atirlar, kosmetika va aksessuarlar — bitta joyda. Tezkor
+              yetkazib berish va 14 kunda qaytarish.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg" variant="secondary" className="font-semibold">
@@ -80,17 +88,20 @@ export default function HomePage() {
           { icon: ShieldCheck, title: '100% asl mahsulot', desc: 'Rasmiy distribyutorlar' },
           { icon: Sparkles, title: 'Sodiqlik dasturi', desc: 'Har xariddan ball' },
         ].map((b) => (
-          <div key={b.title} className="flex items-start gap-3 rounded-xl border bg-card p-4">
-            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+          <div key={b.title} className="bg-card flex items-start gap-3 rounded-xl border p-4">
+            <div className="bg-primary/10 text-primary grid h-10 w-10 shrink-0 place-items-center rounded-lg">
               <b.icon size={20} />
             </div>
             <div>
               <div className="text-sm font-semibold">{b.title}</div>
-              <div className="text-xs text-muted-foreground">{b.desc}</div>
+              <div className="text-muted-foreground text-xs">{b.desc}</div>
             </div>
           </div>
         ))}
       </section>
+
+      {/* Install CTA — prominently on homepage */}
+      <InstallHeroCard />
 
       {/* Categories */}
       <section className="space-y-5">
@@ -131,7 +142,12 @@ export default function HomePage() {
 
       {/* Sale strip */}
       <section className="space-y-5">
-        <SectionTitle title="🔥 Aksiyada" description="Cheklangan vaqt — chegirma" actionHref="/sale" actionLabel="Barchasi" />
+        <SectionTitle
+          title="🔥 Aksiyada"
+          description="Cheklangan vaqt — chegirma"
+          actionHref="/sale"
+          actionLabel="Barchasi"
+        />
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {sale.map((p) => (
             <ProductCardClient key={p.id} product={p} locale={locale} />
@@ -147,7 +163,7 @@ export default function HomePage() {
             <Link
               key={b.id}
               href={`/catalog?brand=${b.slug}`}
-              className="grid aspect-[3/2] place-items-center rounded-xl border bg-card font-bold tracking-wider text-foreground transition hover:border-primary hover:shadow"
+              className="bg-card text-foreground hover:border-primary grid aspect-[3/2] place-items-center rounded-xl border font-bold tracking-wider transition hover:shadow"
               style={{ letterSpacing: '0.2em' }}
             >
               {b.logoText}
@@ -157,13 +173,13 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter */}
-      <section className="rounded-3xl bg-gradient-to-br from-secondary to-muted p-6 md:p-10">
+      <section className="from-secondary to-muted rounded-3xl bg-gradient-to-br p-6 md:p-10">
         <div className="grid items-center gap-6 md:grid-cols-2">
           <div>
             <h3 className="text-2xl font-bold tracking-tight">
               Yangi tushgan mahsulotlardan birinchi bo&apos;lib xabardor bo&apos;ling
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="text-muted-foreground mt-2 text-sm">
               Emailingizni qoldiring va doimiy mijoz uchun 10% chegirma kupon oling.
             </p>
           </div>

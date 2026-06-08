@@ -12,7 +12,9 @@ import { Header } from '../../components/layout/header';
 import { ScrollToTop } from '../../components/layout/scroll-to-top';
 import { SkipLink } from '../../components/layout/skip-link';
 import { InstallPrompt } from '../../components/pwa/install-prompt';
+import { IosInstallSheet } from '../../components/pwa/ios-install-sheet';
 import { ServiceWorkerRegister } from '../../components/pwa/service-worker-register';
+import { StickyInstallBar } from '../../components/pwa/sticky-install-bar';
 import { QueryProvider } from '../../providers/query-provider';
 import { OrganizationJsonLd } from '../../components/seo/structured-data';
 import { StoreHydrator } from '../../store/hydrate';
@@ -86,6 +88,8 @@ export default async function LocaleLayout({
               <ScrollToTop />
               <CookieBanner />
               <InstallPrompt />
+              <IosInstallSheet />
+              <StickyInstallBar />
               <ServiceWorkerRegister />
               <Toaster />
             </TooltipProvider>

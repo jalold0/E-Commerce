@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: 'uz',
     categories: ['business', 'productivity'],
     icons: [
-      { src: '/icon', sizes: '32x32', type: 'image/png' },
+      { src: '/icon.svg', sizes: 'any', type: 'image/svg+xml' },
       { src: '/apple-icon', sizes: '180x180', type: 'image/png', purpose: 'any' },
       { src: '/apple-icon', sizes: '192x192', type: 'image/png', purpose: 'any' },
       { src: '/apple-icon', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
@@ -26,25 +26,25 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Buyurtmalar',
         short_name: 'Orders',
         url: '/orders',
-        icons: [{ src: '/icon', sizes: '32x32' }],
+        icons: [{ src: '/icon.svg', sizes: 'any' }],
       },
       {
         name: 'Mahsulotlar',
         short_name: 'Products',
         url: '/products',
-        icons: [{ src: '/icon', sizes: '32x32' }],
+        icons: [{ src: '/icon.svg', sizes: 'any' }],
       },
       {
         name: 'Mijozlar',
         short_name: 'Customers',
         url: '/customers',
-        icons: [{ src: '/icon', sizes: '32x32' }],
+        icons: [{ src: '/icon.svg', sizes: 'any' }],
       },
       {
         name: 'Analitika',
         short_name: 'Analytics',
         url: '/analytics',
-        icons: [{ src: '/icon', sizes: '32x32' }],
+        icons: [{ src: '/icon.svg', sizes: 'any' }],
       },
     ],
   };
