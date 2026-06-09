@@ -19,15 +19,7 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
   },
   formatDetection: { telephone: false },
-  icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/icon', sizes: '32x32', type: 'image/png' },
-    ],
-    shortcut: '/icon.svg',
-    apple: [{ url: '/apple-icon', sizes: '180x180', type: 'image/png' }],
-    other: [{ rel: 'mask-icon', url: '/icon.svg', color: '#8B0020' }],
-  },
+  // Next.js app/icon.png va app/apple-icon.png'ni avtomatik aniqlaydi
 };
 
 export const viewport: Viewport = {

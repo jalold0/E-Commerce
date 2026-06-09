@@ -1,5 +1,5 @@
 // Admin panel Service Worker — minimal.
-const CACHE_NAME = 'sellobay-admin-v4'; // ⚠️ Serif SB monogram update
+const CACHE_NAME = 'sellobay-admin-v5'; // ⚠️ Rasmiy logo PNG
 const STATIC = ['/', '/manifest.webmanifest', '/icon', '/apple-icon'];
 
 self.addEventListener('install', (event) => {

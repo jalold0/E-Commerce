@@ -78,7 +78,7 @@ export function StickyInstallBar() {
         onClick={install}
         className="active:bg-accent flex w-full items-center gap-3 px-4 py-3 text-left"
       >
-        <SellobayMark size={40} variant="bordeaux" rounded={10} />
+        <SellobayMark size={40} />
         <div className="min-w-0 flex-1">
           <div className="text-sm font-semibold">Sellobay ilovasini o&apos;rnating</div>
           <div className="text-muted-foreground text-[11px]">
@@ -162,7 +162,7 @@ export function InstallHeroCard({ className }: InstallHeroProps) {
 
       <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
         <div className="flex items-center gap-3 md:contents">
-          <SellobayMark size={56} variant="bordeaux" rounded={14} className="shrink-0 shadow-2xl" />
+          <SellobayMark size={56} className="shrink-0 shadow-2xl" />
           <div className="md:flex-1">
             <div className="text-brand-gold text-xs font-bold uppercase tracking-widest">
               ✨ Sellobay App

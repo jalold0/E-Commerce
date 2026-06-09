@@ -73,7 +73,7 @@ export function InstallPrompt() {
       </button>
       <div className="flex items-start gap-3">
         {/* Sellobay SB monogram — rasmiy logo */}
-        <SellobayMark size={48} variant="bordeaux" rounded={12} className="shrink-0 shadow-md" />
+        <SellobayMark size={48} className="shrink-0 shadow-md" />
         <div className="min-w-0 flex-1">
           <div className="text-sm font-semibold">Sellobay ilovasini o&apos;rnating</div>
           <div className="text-muted-foreground mt-0.5 text-xs">
