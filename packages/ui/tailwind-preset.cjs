@@ -80,6 +80,16 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
         display: ['var(--font-display)', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        // Sellobay SB monogram, premium sarlavhalar uchun
+        serif: [
+          'var(--font-serif)',
+          'Playfair Display',
+          'Didot',
+          'Bodoni 72',
+          'Georgia',
+          'Times New Roman',
+          'serif',
+        ],
       },
       boxShadow: {
         bordeaux: '0 12px 32px rgba(139, 0, 32, 0.25)',

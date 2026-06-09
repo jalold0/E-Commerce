@@ -1,28 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="sb-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1A0A0F"/>
+    <!-- Rasmiy logodagi gradient — yuqori qora, pastki bordo -->
+    <linearGradient id="sb-bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1A0008"/>
       <stop offset="0.5" stop-color="#5C0015"/>
       <stop offset="1" stop-color="#8B0020"/>
     </linearGradient>
-    <linearGradient id="sb-gold" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#C9A961"/>
-      <stop offset="1" stop-color="#E5C77A"/>
-    </linearGradient>
+    <!-- Subtle radial glow markazda — premium chuqurlik -->
+    <radialGradient id="sb-glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#B30029" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Bordo gradient background — rounded square -->
+  <!-- Background -->
   <rect width="64" height="64" rx="14" fill="url(#sb-bg)"/>
+  <rect width="64" height="64" rx="14" fill="url(#sb-glow)"/>
 
-  <!-- "SB" wordmark — system fontlar, max compatibility -->
-  <text x="32" y="44"
+  <!-- Elegant serif "SB" — Didot/Georgia uslubida, italic S + bold B -->
+  <!-- iOS/Android'da Didot/Georgia mavjud; Linux'da fallback'lar ishlaydi -->
+  <text x="32" y="46"
         text-anchor="middle"
-        font-family="'Helvetica Neue', 'Arial Black', 'Inter', system-ui, sans-serif"
-        font-size="32"
-        font-weight="900"
-        letter-spacing="-2"
+        font-family="'Didot', 'Bodoni 72', 'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="40"
+        font-weight="700"
+        letter-spacing="-4"
         fill="#fff">SB</text>
-
-  <!-- Premium oltin accent — kichik dot top-right (yulduzcha kabi) -->
-  <circle cx="50" cy="14" r="2.5" fill="url(#sb-gold)"/>
 </svg>

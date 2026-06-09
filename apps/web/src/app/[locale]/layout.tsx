@@ -2,7 +2,7 @@ import '@ecom/ui/globals.css';
 
 import { Toaster, TooltipProvider } from '@ecom/ui';
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
@@ -22,6 +22,14 @@ import { StoreHydrator } from '../../store/hydrate';
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-sans',
+  display: 'swap',
+});
+
+// Playfair Display — Sellobay SB monogram va premium sarlavhalar uchun elegant serif
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['700', '900'],
+  variable: '--font-serif',
   display: 'swap',
 });
 
@@ -94,7 +102,11 @@ export default async function LocaleLayout({
 }) {
   const messages = await getMessages();
   return (
-    <html lang={locale} className={inter.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={inter.variable + ' ' + playfair.variable}
+      suppressHydrationWarning
+    >
       <body className="bg-background text-foreground min-h-screen font-sans antialiased">
         <OrganizationJsonLd />
         <NextIntlClientProvider locale={locale} messages={messages}>

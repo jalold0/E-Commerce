@@ -2,7 +2,7 @@
 // CACHE VERSION'NI O'ZGARTIRGAN HAR SAFAR — eski cache avtomatik tozalanadi.
 // Network-first for HTML/API, cache-first for static assets.
 
-const CACHE_NAME = 'sellobay-v3'; // ⚠️ Brand update — eski 'ecom-v1' cache'larini tozalash
+const CACHE_NAME = 'sellobay-v4'; // ⚠️ Serif SB monogram — favikon yangilandi
 const STATIC_ASSETS = ['/', '/manifest.webmanifest', '/icon', '/apple-icon'];
 
 self.addEventListener('install', (event) => {

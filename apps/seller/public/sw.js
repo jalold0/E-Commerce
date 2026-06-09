@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sellobay-seller-v3'; // ⚠️ Brand update — eski cache'lar tozalanadi
+const CACHE_NAME = 'sellobay-seller-v4'; // ⚠️ Serif SB monogram update
 const STATIC = ['/', '/manifest.webmanifest', '/icon', '/apple-icon'];
 
 self.addEventListener('install', (event) => {

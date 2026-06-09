@@ -105,7 +105,10 @@ export function Footer() {
           {/* Brand column */}
           <div className="space-y-4 md:col-span-4">
             <div className="flex items-center gap-2.5">
-              <div className="bg-bordeaux-gradient grid h-10 w-10 place-items-center rounded-xl text-sm font-black tracking-tighter text-white shadow">
+              <div
+                className="bg-bordeaux-gradient grid h-10 w-10 place-items-center rounded-xl font-serif text-lg font-black text-white shadow"
+                style={{ letterSpacing: '-0.08em' }}
+              >
                 SB
               </div>
               <div className="leading-tight">
