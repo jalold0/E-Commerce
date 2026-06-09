@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Send, Youtube } from 'lucide-react';
 import Link from 'next/link';
 
+import { SellobayMark } from '../brand/sellobay-mark';
 import { NewsletterForm } from './newsletter';
 
 const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [

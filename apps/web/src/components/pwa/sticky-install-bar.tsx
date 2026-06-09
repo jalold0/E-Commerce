@@ -4,7 +4,9 @@ import { cn } from '@ecom/ui';
 import { Download, Smartphone, X } from 'lucide-react';
 import * as React from 'react';
 
-const DISMISS_KEY = 'ecom_sticky_install_dismissed_v1';
+import { SellobayMark } from '../brand/sellobay-mark';
+
+const DISMISS_KEY = 'sellobay_sticky_install_dismissed_v2';
 const DISMISS_DAYS = 7;
 
 interface BeforeInstallPromptEvent extends Event {
@@ -76,14 +78,14 @@ export function StickyInstallBar() {
         onClick={install}
         className="active:bg-accent flex w-full items-center gap-3 px-4 py-3 text-left"
       >
-        <div className="from-primary grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br to-rose-500 text-sm font-black text-white">
-          E
-        </div>
+        <SellobayMark size={40} variant="bordeaux" rounded={10} />
         <div className="min-w-0 flex-1">
-          <div className="text-sm font-semibold">E-Commerce ilovasini o&apos;rnating</div>
-          <div className="text-muted-foreground text-[11px]">Tezroq, push xabarlar, offline</div>
+          <div className="text-sm font-semibold">Sellobay ilovasini o&apos;rnating</div>
+          <div className="text-muted-foreground text-[11px]">
+            Tezroq, push xabarlar, offline rejim
+          </div>
         </div>
-        <div className="bg-primary text-primary-foreground flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold">
+        <div className="bg-bordeaux-gradient flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-white">
           <Download size={12} /> O&apos;rnatish
         </div>
         <button
@@ -150,46 +152,49 @@ export function InstallHeroCard({ className }: InstallHeroProps) {
   return (
     <div
       className={cn(
-        'from-primary relative overflow-hidden rounded-2xl border bg-gradient-to-br via-violet-600 to-rose-600 p-5 text-white shadow-lg md:p-6',
+        'bg-bordeaux-gradient relative overflow-hidden rounded-3xl border p-5 text-white shadow-xl md:p-7',
         className,
       )}
     >
-      <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+      {/* Decorative orbs */}
+      <div className="bg-brand-gold/10 absolute -right-6 -top-6 h-32 w-32 rounded-full blur-2xl" />
       <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
 
       <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-        <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/15 backdrop-blur md:h-16 md:w-16">
-          <Smartphone className="h-7 w-7 md:h-8 md:w-8" />
+        <div className="flex items-center gap-3 md:contents">
+          <SellobayMark size={56} variant="bordeaux" rounded={14} className="shrink-0 shadow-2xl" />
+          <div className="md:flex-1">
+            <div className="text-brand-gold text-xs font-bold uppercase tracking-widest">
+              ✨ Sellobay App
+            </div>
+            <h3 className="mt-1 text-lg font-bold leading-tight md:text-xl">
+              Sellobay ilovasini telefoningizga o&apos;rnating
+            </h3>
+            <p className="mt-1 max-w-md text-xs text-white/85 md:text-sm">
+              App Store yoki Google Play kerak emas — brauzerdan bir bosishda. Tezroq, push
+              xabarlar, offline rejim.
+            </p>
+          </div>
         </div>
-        <div className="flex-1">
-          <div className="text-xs font-bold uppercase tracking-widest text-white/80">📱 Yangi</div>
-          <h3 className="mt-1 text-lg font-bold leading-tight md:text-xl">
-            E-Commerce ilovasini telefoningizga o&apos;rnating
-          </h3>
-          <p className="mt-1 max-w-md text-xs text-white/85 md:text-sm">
-            App Store yoki Google Play kerak emas — to&apos;g&apos;ridan-to&apos;g&apos;ri
-            brauzerdan bir bosishda. Tezroq, push xabarlar, offline.
-          </p>
-        </div>
-        <div className="flex flex-col gap-2 md:flex-row">
+        <div className="flex flex-col gap-2 md:shrink-0 md:flex-row">
           {event ? (
             <button
               onClick={install}
-              className="text-foreground inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold active:opacity-85"
+              className="text-brand-bordeaux-deep inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02] active:opacity-85"
             >
               <Download size={16} /> O&apos;rnatish
             </button>
           ) : isIos ? (
             <a
               href="/download"
-              className="text-foreground inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold active:opacity-85"
+              className="text-brand-bordeaux-deep inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02] active:opacity-85"
             >
-              📱 iPhone uchun ko&apos;rsatma
+              <Smartphone size={16} /> iPhone uchun
             </a>
           ) : (
             <a
               href="/download"
-              className="text-foreground inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold active:opacity-85"
+              className="text-brand-bordeaux-deep inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02] active:opacity-85"
             >
               <Download size={16} /> Yo&apos;riqnoma
             </a>

@@ -4,13 +4,15 @@ import { Button } from '@ecom/ui';
 import { Download, X } from 'lucide-react';
 import * as React from 'react';
 
+import { SellobayMark } from '../brand/sellobay-mark';
+
 // Chrome/Edge bizga beradigan event
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
 }
 
-const DISMISS_KEY = 'ecom_pwa_install_dismissed_v1';
+const DISMISS_KEY = 'sellobay_pwa_install_dismissed_v2';
 const DISMISS_DAYS = 7; // 7 kun ko'rinmasin
 
 export function InstallPrompt() {
@@ -28,7 +30,7 @@ export function InstallPrompt() {
     const onBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       setEvent(e as BeforeInstallPromptEvent);
-      // Bir oz kechiktirib chiqaramiz — birinchi interaktiv harakat yoki 4s keyin
+      // Bir oz kechiktirib chiqaramiz — 4s keyin
       setTimeout(() => setVisible(true), 4000);
     };
 
@@ -58,7 +60,7 @@ export function InstallPrompt() {
   return (
     <div
       role="dialog"
-      aria-label="Ilovani o'rnatish"
+      aria-label="Sellobay ilovasini o'rnatish"
       className="bg-card fixed inset-x-4 bottom-4 z-50 mx-auto max-w-md rounded-2xl border p-4 shadow-2xl md:left-auto md:right-4 md:max-w-sm"
     >
       <button
@@ -70,17 +72,20 @@ export function InstallPrompt() {
         <X size={14} />
       </button>
       <div className="flex items-start gap-3">
-        <div className="from-primary text-primary-foreground grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br to-rose-500 text-lg font-black">
-          E
-        </div>
+        {/* Sellobay SB monogram — rasmiy logo */}
+        <SellobayMark size={48} variant="bordeaux" rounded={12} className="shrink-0 shadow-md" />
         <div className="min-w-0 flex-1">
-          <div className="text-sm font-semibold">E-Commerce ilovasini o&apos;rnating</div>
+          <div className="text-sm font-semibold">Sellobay ilovasini o&apos;rnating</div>
           <div className="text-muted-foreground mt-0.5 text-xs">
             Telefon yoki kompyuteringizga qo&apos;shing — tezroq kirish, push xabarlar, offline
             rejim.
           </div>
           <div className="mt-3 flex gap-2">
-            <Button onClick={install} size="sm" className="gap-1">
+            <Button
+              onClick={install}
+              size="sm"
+              className="bg-bordeaux-gradient gap-1 text-white hover:opacity-95"
+            >
               <Download size={14} /> O&apos;rnatish
             </Button>
             <Button onClick={dismiss} size="sm" variant="ghost">

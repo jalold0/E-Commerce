@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { pickLocale, productImage, type Locale, type MockProduct } from '../../lib/mock-data';
+import { SellobayMark } from '../brand/sellobay-mark';
 
 interface Props {
   locale: Locale;

@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import * as React from 'react';
 
+import { SellobayMark } from '../brand/sellobay-mark';
 import { AnimatedSearch } from './animated-search';
 import { CartBadge } from './cart-badge';
 import { LocaleSwitcher } from './locale-switcher';
