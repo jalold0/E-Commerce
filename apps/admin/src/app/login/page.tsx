@@ -37,11 +37,19 @@ export default function LoginPage() {
 
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-2">
-      <div className="relative hidden bg-gradient-to-br from-primary via-violet-600 to-rose-500 p-12 lg:flex lg:flex-col">
-        <div className="text-2xl font-bold text-white">E-Commerce Admin</div>
+      <div className="bg-bordeaux-gradient relative hidden p-12 lg:flex lg:flex-col">
+        <div className="flex items-center gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/sellobay-icon-64.png"
+            alt="Sellobay"
+            className="h-12 w-12 rounded-xl shadow-lg"
+          />
+          <div className="text-2xl font-bold text-white">Sellobay Admin</div>
+        </div>
         <div className="mt-auto max-w-md text-white">
           <h2 className="text-3xl font-bold leading-tight">
-            O`zbekistondagi eng yirik e-commerce ekosistemasini boshqaring
+            O`zbekistondagi eng yirik marketplace ekotizimini boshqaring
           </h2>
           <p className="mt-4 text-white/80">
             Buyurtmalar, mahsulotlar, sotuvchilar, kuryerlar va marketing — barchasi bitta panelda.
@@ -53,14 +61,14 @@ export default function LoginPage() {
         <Card className="w-full max-w-sm">
           <CardHeader>
             <CardTitle>Tizimga kirish</CardTitle>
-            <p className="text-sm text-muted-foreground">Admin panel uchun login ma`lumotlari</p>
+            <p className="text-muted-foreground text-sm">Admin panel uchun login ma`lumotlari</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={onSubmit} className="space-y-4">
               <div>
                 <Label>Email</Label>
                 <div className="relative">
-                  <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Mail className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
                   <Input
                     type="email"
                     value={email}
@@ -74,7 +82,7 @@ export default function LoginPage() {
               <div>
                 <Label>Parol</Label>
                 <div className="relative">
-                  <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Lock className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
                   <Input
                     type="password"
                     value={password}
@@ -90,7 +98,7 @@ export default function LoginPage() {
                   <Switch checked={remember} onCheckedChange={setRemember} />
                   Eslab qol
                 </label>
-                <a className="text-xs text-primary hover:underline" href="#">
+                <a className="text-primary text-xs hover:underline" href="#">
                   Parolni unutdingizmi?
                 </a>
               </div>
@@ -99,7 +107,7 @@ export default function LoginPage() {
                 Kirish
               </Button>
             </form>
-            <p className="mt-4 text-center text-xs text-muted-foreground">
+            <p className="text-muted-foreground mt-4 text-center text-xs">
               Yordam kerakmi?{' '}
               <a className="text-primary hover:underline" href="mailto:support@example.uz">
                 support@example.uz

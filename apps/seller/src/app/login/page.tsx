@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, Card, CardContent, CardHeader, CardTitle, Input, Label } from '@ecom/ui';
-import { Loader2, Lock, Mail, Store } from 'lucide-react';
+import { Loader2, Lock, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import * as React from 'react';
@@ -20,9 +20,15 @@ export default function SellerLoginPage() {
 
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-2">
-      <div className="relative hidden bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-600 p-12 lg:flex lg:flex-col">
-        <div className="flex items-center gap-2 text-2xl font-bold text-white">
-          <Store className="h-6 w-6" /> Sotuvchi paneli
+      <div className="bg-bordeaux-gradient relative hidden p-12 lg:flex lg:flex-col">
+        <div className="flex items-center gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/sellobay-icon-64.png"
+            alt="Sellobay"
+            className="h-12 w-12 rounded-xl shadow-lg"
+          />
+          <div className="text-2xl font-bold text-white">Sellobay Sotuvchi</div>
         </div>
         <div className="mt-auto max-w-md text-white">
           <h2 className="text-3xl font-bold leading-tight">
@@ -44,14 +50,14 @@ export default function SellerLoginPage() {
               <div>
                 <Label>Email</Label>
                 <div className="relative">
-                  <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Mail className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
                   <Input type="email" className="pl-9" placeholder="seller@example.uz" />
                 </div>
               </div>
               <div>
                 <Label>Parol</Label>
                 <div className="relative">
-                  <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Lock className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
                   <Input type="password" className="pl-9" placeholder="••••••••" />
                 </div>
               </div>
@@ -59,7 +65,7 @@ export default function SellerLoginPage() {
                 {submitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                 Kirish
               </Button>
-              <p className="text-center text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-center text-xs">
                 Hali sotuvchi emasmisiz?{' '}
                 <Link href="/register" className="text-primary hover:underline">
                   Ro`yxatdan o`tish

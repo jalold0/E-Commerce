@@ -36,7 +36,7 @@ export default function TermsPage() {
     <LegalPage
       icon={Scale}
       title="Foydalanish shartlari"
-      description="E-Commerce platformasidan foydalanish bo'yicha rasmiy shartnoma."
+      description="Sellobay marketplace platformasidan foydalanish bo'yicha rasmiy shartnoma."
       effectiveDate="2026-yil 1-yanvar"
       sections={SECTIONS}
     />

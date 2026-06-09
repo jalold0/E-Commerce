@@ -210,9 +210,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/[0.08]">
           <div className="container flex flex-col items-center justify-between gap-2 py-5 text-xs text-white/50 md:flex-row">
-            <div>
-              © {new Date().getFullYear()} E-Commerce Ekosistema. Barcha huquqlar himoyalangan.
-            </div>
+            <div>© {new Date().getFullYear()} Sellobay LLC. Barcha huquqlar himoyalangan.</div>
             <div className="flex items-center gap-1">
               Made in Uzbekistan <span className="text-base">🇺🇿</span>
             </div>

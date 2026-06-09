@@ -69,11 +69,14 @@ export function IosInstallSheet() {
 
           {/* Header */}
           <div className="flex items-center gap-3">
-            <div className="from-primary grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br to-rose-500 text-xl font-black text-white shadow-lg">
-              E
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/sellobay-icon-64.png"
+              alt="Sellobay"
+              className="h-14 w-14 shrink-0 rounded-2xl shadow-lg"
+            />
             <div>
-              <div className="text-base font-bold">E-Commerce</div>
+              <div className="text-base font-bold">Sellobay</div>
               <div className="text-muted-foreground text-xs">Telefonga o&apos;rnating</div>
             </div>
           </div>

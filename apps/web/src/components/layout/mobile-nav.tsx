@@ -45,14 +45,13 @@ export function MobileNav() {
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="w-80 overflow-y-auto p-0">
-        <div className="from-primary text-primary-foreground border-b bg-gradient-to-br to-rose-500 p-5">
+        <div className="bg-bordeaux-gradient border-b p-5 text-white">
           <div className="flex items-center gap-2">
-            <div className="grid h-9 w-9 place-items-center rounded-lg bg-white/15 font-black backdrop-blur">
-              E
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/sellobay-icon-64.png" alt="Sellobay" className="h-9 w-9 rounded-lg shadow" />
             <div className="leading-tight">
-              <div className="text-base font-bold">E-Commerce</div>
-              <div className="text-[10px] opacity-80">Ekosistema</div>
+              <div className="text-base font-bold">Sellobay</div>
+              <div className="text-[10px] uppercase tracking-widest opacity-80">Marketplace</div>
             </div>
           </div>
           <div className="mt-4 flex gap-2">
