@@ -4,78 +4,84 @@
 
 @layer base {
   :root {
+    /* ===== SELLOBAY BRAND PALETTE — Bordo + Qora + Oltin ===== */
+
     /* Background */
     --background: 0 0% 100%;
-    --foreground: 0 0% 6.7%; /* #111111 */
+    --foreground: 240 9% 4%; /* #0A0A0C — brand-black */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 6.7%;
+    --card-foreground: 240 9% 4%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 6.7%;
+    --popover-foreground: 240 9% 4%;
 
-    /* Brand primary — TZ #C8102E qizil */
-    --primary: 351 86% 42%;
+    /* PRIMARY — Bordo #8B0020 */
+    --primary: 351 100% 27%;
     --primary-foreground: 0 0% 100%;
-    --primary-bright: 357 82% 51%; /* #E8192C */
+    --primary-bright: 351 100% 35%; /* #B30029 */
 
-    /* Secondary — TZ #1A0A1E to'q binafsha-qora */
-    --secondary: 280 51% 8%;
+    /* SECONDARY — Qora #0A0A0C */
+    --secondary: 240 9% 4%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent — TZ #FF6B35 to'q sariq, urgency */
-    --accent: 16 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* ACCENT — Oltin #C9A961 (premium chiziq, badge) */
+    --accent: 41 49% 59%;
+    --accent-foreground: 351 100% 18%; /* deep wine on gold */
 
-    /* Neutral / muted */
-    --muted: 240 9% 97%; /* #F7F7F8 */
-    --muted-foreground: 220 9% 46%; /* #6B7280 */
+    /* Neutral */
+    --muted: 30 25% 97%; /* #FAF6F4 — UMBRA editorial soft bg */
+    --muted-foreground: 240 4% 42%; /* #6B6B73 */
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 351 86% 42%;
+    --border: 30 15% 91%; /* #EAEAEC warm tone */
+    --input: 30 15% 91%;
+    --ring: 351 100% 27%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem; /* 14px — slightly bigger for premium feel */
 
-    /* Brand-specific tokens (Trendyol/Musinsa style) */
-    --brand-red: 351 86% 42%; /* #C8102E */
-    --brand-red-bright: 357 82% 51%; /* #E8192C */
-    --brand-red-dark: 350 100% 28%; /* #8B0020 */
-    --brand-dark: 280 51% 8%; /* #1A0A1E */
-    --brand-orange: 16 100% 60%; /* #FF6B35 */
-    --brand-flame: 18 100% 50%; /* #FF4500 */
-    --footer-bg: 222 20% 7%; /* #0F1117 */
+    /* ===== Sellobay brand tokens ===== */
+    --brand-bordeaux: 351 100% 27%; /* #8B0020 */
+    --brand-bordeaux-deep: 351 100% 18%; /* #5C0015 */
+    --brand-bordeaux-bright: 351 100% 35%; /* #B30029 */
+    --brand-wine: 350 100% 21%; /* #6B0019 */
+    --brand-black: 240 9% 4%; /* #0A0A0C */
+    --brand-charcoal: 240 8% 9%; /* #16161A */
+    --brand-graphite: 240 8% 13%; /* #1F1F24 */
+    --brand-smoke: 240 7% 17%; /* #2A2A30 */
+    --brand-gold: 41 49% 59%; /* #C9A961 */
+    --brand-gold-bright: 40 67% 69%; /* #E5C77A */
+
+    /* UMBRA-style editorial soft tones */
+    --editorial-bg: 30 35% 97%; /* warm cream */
+    --editorial-pink: 12 100% 97%; /* soft blush */
+    --editorial-amber: 30 80% 92%; /* warm amber tint */
+
+    --footer-bg: 240 9% 4%; /* Brand black */
   }
 
   .dark {
-    --background: 222 20% 7%;
+    --background: 240 9% 4%;
     --foreground: 0 0% 98%;
-    --card: 222 20% 9%;
+    --card: 240 8% 9%;
     --card-foreground: 0 0% 98%;
-    --popover: 222 20% 9%;
+    --popover: 240 8% 9%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 357 82% 51%;
+    --primary: 351 100% 35%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 280 30% 15%;
+    --secondary: 240 8% 13%;
     --secondary-foreground: 0 0% 98%;
-
-    --accent: 16 100% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 222 14% 17%;
-    --muted-foreground: 220 9% 65%;
-
-    --destructive: 0 62.8% 30.6%;
+    --accent: 41 49% 59%;
+    --accent-foreground: 351 100% 18%;
+    --muted: 240 7% 17%;
+    --muted-foreground: 240 5% 65%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 222 14% 17%;
-    --input: 222 14% 17%;
-    --ring: 357 82% 51%;
+    --border: 240 7% 17%;
+    --input: 240 7% 17%;
+    --ring: 351 100% 35%;
   }
 
   * {
@@ -84,15 +90,14 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
   }
 
-  /* Selection */
   ::selection {
     background-color: hsl(var(--primary) / 0.2);
     color: hsl(var(--primary));
   }
 
-  /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -106,43 +111,80 @@
 }
 
 @layer utilities {
-  /* Hero gradient (TZ §2) */
-  .bg-hero-gradient {
+  /* ===== Sellobay brand gradients ===== */
+  .bg-bordeaux-gradient {
     background: linear-gradient(
       135deg,
-      hsl(var(--brand-dark)) 0%,
-      hsl(var(--brand-red-dark)) 50%,
-      hsl(var(--brand-red)) 80%,
-      hsl(var(--brand-flame)) 100%
+      hsl(var(--brand-bordeaux)) 0%,
+      hsl(var(--brand-bordeaux-deep)) 50%,
+      hsl(var(--brand-black)) 100%
     );
   }
 
-  /* Brand gradient — for buttons, badges */
-  .bg-brand-gradient {
-    background: linear-gradient(135deg, hsl(var(--brand-red)) 0%, hsl(var(--brand-red-bright)) 100%);
+  .bg-hero-gradient {
+    background: linear-gradient(
+      140deg,
+      hsl(var(--brand-black)) 0%,
+      hsl(var(--brand-bordeaux-deep)) 50%,
+      hsl(var(--brand-bordeaux)) 100%
+    );
   }
 
-  /* Glass morphism (TZ §2 badge) */
+  /* UMBRA-style editorial light background */
+  .bg-editorial {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--editorial-bg)) 0%,
+      hsl(var(--editorial-pink)) 50%,
+      hsl(var(--editorial-bg)) 100%
+    );
+  }
+  .bg-editorial-warm {
+    background: linear-gradient(135deg, hsl(var(--editorial-bg)) 0%, hsl(var(--editorial-amber)) 100%);
+  }
+
+  /* Premium gold accent */
+  .bg-gold-gradient {
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--brand-gold)) 50%, transparent 100%);
+  }
+  .text-gold-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--brand-gold)) 0%,
+      hsl(var(--brand-gold-bright)) 50%,
+      hsl(var(--brand-gold)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Brand gradient — buttons, badges */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, hsl(var(--brand-bordeaux)) 0%, hsl(var(--brand-bordeaux-bright)) 100%);
+  }
+
+  /* Glass morphism */
   .glass {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
   .glass-light {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  .glass-dark {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .glass-dark {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(10, 10, 12, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Nav hover underline (TZ §1) */
+  /* Nav hover underline */
   .nav-underline {
     position: relative;
   }
@@ -162,40 +204,105 @@
     transform: scaleX(1);
   }
 
-  /* Card lift (TZ §4) */
+  /* Card lift */
   .card-lift {
     transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.2s ease;
   }
   .card-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px -15px rgba(10, 10, 12, 0.2);
   }
 
-  /* Flash sale glow (TZ §5) */
+  /* Premium editorial card — UMBRA inspired */
+  .editorial-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 30px 60px -25px rgba(10, 10, 12, 0.15), 0 8px 24px -8px rgba(10, 10, 12, 0.08);
+    transition:
+      transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .editorial-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 40px 80px -25px rgba(10, 10, 12, 0.22), 0 12px 32px -8px rgba(139, 0, 32, 0.1);
+  }
+
+  /* Tilt variants — UMBRA-style asymmetric layout */
+  .tilt-left {
+    transform: rotate(-3deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .tilt-left:hover {
+    transform: rotate(-1deg) translateY(-8px);
+  }
+  .tilt-right {
+    transform: rotate(2.5deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .tilt-right:hover {
+    transform: rotate(0.5deg) translateY(-8px);
+  }
+
+  /* Flash sale glow */
   .flash-glow {
     animation: flash-pulse 2s ease-in-out infinite;
   }
   @keyframes flash-pulse {
     0%, 100% {
-      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+      box-shadow: 0 0 10px hsl(var(--brand-gold) / 0.5);
     }
     50% {
-      box-shadow: 0 0 24px rgba(255, 69, 0, 0.9);
+      box-shadow: 0 0 24px hsl(var(--brand-gold) / 0.9);
     }
   }
 
-  /* Staggered entrance (TZ §3) */
+  /* Staggered entrance */
   .fade-up {
     opacity: 0;
     transform: translateY(20px);
-    animation: fade-up 0.6s ease forwards;
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   @keyframes fade-up {
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Slow drift — for editorial images subtle motion */
+  .drift {
+    animation: drift 8s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  /* Premium border (gold accent) */
+  .border-premium {
+    position: relative;
+  }
+  .border-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(135deg, hsl(var(--brand-gold)) 0%, transparent 50%, hsl(var(--brand-gold)) 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }

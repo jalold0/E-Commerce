@@ -105,19 +105,19 @@ export function Footer() {
           {/* Brand column */}
           <div className="space-y-4 md:col-span-4">
             <div className="flex items-center gap-2.5">
-              <div className="bg-brand-gradient grid h-10 w-10 place-items-center rounded-xl font-black text-white shadow">
-                E
+              <div className="bg-bordeaux-gradient grid h-10 w-10 place-items-center rounded-xl font-black text-white shadow">
+                S
               </div>
               <div className="leading-tight">
-                <div className="text-lg font-bold tracking-tight text-white">E-Commerce</div>
+                <div className="text-lg font-bold tracking-tight text-white">Sellobay</div>
                 <div className="text-[10px] uppercase tracking-widest text-white/60">
-                  Ekosistema
+                  Marketplace
                 </div>
               </div>
             </div>
             <p className="max-w-xs text-sm text-white/70">
-              O&apos;zbekistondagi eng yirik ko&apos;p toifali onlayn savdo platformasi. Sevimli
-              mahsulotlaringiz bir joyda.
+              O&apos;zbekistondagi eng yirik marketplace. Minglab sotuvchilar, premium brendlar va
+              tezkor yetkazib berish.
             </p>
             <div className="space-y-1.5 text-sm">
               <div className="flex items-center gap-2 text-white/70">

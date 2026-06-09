@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
 import { CategoryGrid } from '../../components/layout/category-grid';
+import { FeaturedCollection } from '../../components/layout/featured-collection';
 import { HeroSection } from '../../components/layout/hero-section';
 import { SaleSection } from '../../components/layout/sale-section';
 import { ProductCardClient } from '../../components/product/product-card-client';
@@ -11,22 +12,20 @@ import { brands, products, type Locale } from '../../lib/mock-data';
 
 export default function HomePage() {
   const locale = useLocale() as Locale;
-  const heroProducts = products.slice(0, 4);
+  const heroProducts = products.slice(0, 3); // UMBRA: 3 ta staggered
+  const collection = products.slice(3, 6); // Featured Collection: keyingi 3 ta
   const featured = products.slice(0, 8);
   const sale = products.filter((p) => p.badge === 'SALE' || p.badge === 'TOP').slice(0, 8);
 
   return (
-    <div className="space-y-12 md:space-y-16">
-      {/* TZ §2: Hero + stats bar */}
+    <div className="space-y-12 md:space-y-20">
+      {/* Hero — UMBRA editorial style */}
       <HeroSection locale={locale} heroProducts={heroProducts} />
 
-      {/* PWA install CTA */}
-      <InstallHeroCard />
-
-      {/* TZ §3: Categories with per-category colors */}
+      {/* Categories with per-category colors */}
       <CategoryGrid locale={locale} />
 
-      {/* TZ §4: Featured products */}
+      {/* Featured products — bestsellers grid */}
       <section className="space-y-5">
         <SectionTitle
           title="Eng ko'p sotilganlar"
@@ -41,23 +40,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TZ §5: Sale section with countdown */}
+      {/* Featured Collection — UMBRA editorial 3-image showcase */}
+      <FeaturedCollection
+        locale={locale}
+        products={collection}
+        title="Tanlangan kolleksiya"
+        subtitle="Tahririyat tomonidan tanlangan eng yaxshi mahsulotlar — premium sotuvchilardan"
+      />
+
+      {/* Sale section with countdown */}
       <SaleSection locale={locale} saleProducts={sale} />
+
+      {/* PWA install CTA */}
+      <InstallHeroCard />
 
       {/* Brands */}
       <section className="space-y-5">
-        <SectionTitle title="Mashhur brendlar" description="Eng yaxshi brendlar bizda" />
+        <SectionTitle title="Mashhur brendlar" description="Eng yaxshi brendlar Sellobay'da" />
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-8">
           {brands.map((b) => (
             <Link
               key={b.id}
               href={`/catalog?brand=${b.slug}`}
-              className="bg-card text-foreground hover:border-primary group relative grid aspect-[3/2] place-items-center overflow-hidden rounded-2xl border font-bold tracking-[0.2em] transition-all hover:-translate-y-1 hover:shadow-lg"
+              className="bg-card text-foreground hover:border-brand-bordeaux group relative grid aspect-[3/2] place-items-center overflow-hidden rounded-2xl border font-bold tracking-[0.2em] transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <span className="relative z-10 text-sm transition-transform group-hover:scale-110">
                 {b.logoText}
               </span>
-              <div className="from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 absolute inset-0 bg-gradient-to-br transition-colors" />
+              <div className="from-brand-bordeaux/0 to-brand-bordeaux/0 group-hover:from-brand-bordeaux/5 group-hover:to-brand-bordeaux/10 absolute inset-0 bg-gradient-to-br transition-colors" />
             </Link>
           ))}
         </div>

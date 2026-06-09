@@ -45,14 +45,30 @@ module.exports = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        // Brand-specific tokens
+        // ====== SELLOBAY BRAND TOKENS ======
         brand: {
-          red: 'hsl(var(--brand-red))',
-          'red-bright': 'hsl(var(--brand-red-bright))',
-          'red-dark': 'hsl(var(--brand-red-dark))',
-          dark: 'hsl(var(--brand-dark))',
-          orange: 'hsl(var(--brand-orange))',
-          flame: 'hsl(var(--brand-flame))',
+          bordeaux: 'hsl(var(--brand-bordeaux))',
+          'bordeaux-deep': 'hsl(var(--brand-bordeaux-deep))',
+          'bordeaux-bright': 'hsl(var(--brand-bordeaux-bright))',
+          wine: 'hsl(var(--brand-wine))',
+          black: 'hsl(var(--brand-black))',
+          charcoal: 'hsl(var(--brand-charcoal))',
+          graphite: 'hsl(var(--brand-graphite))',
+          smoke: 'hsl(var(--brand-smoke))',
+          gold: 'hsl(var(--brand-gold))',
+          'gold-bright': 'hsl(var(--brand-gold-bright))',
+          // Legacy aliases — vaqtinchalik mavjud kod buzilmasligi uchun
+          red: 'hsl(var(--brand-bordeaux))',
+          'red-bright': 'hsl(var(--brand-bordeaux-bright))',
+          'red-dark': 'hsl(var(--brand-bordeaux-deep))',
+          dark: 'hsl(var(--brand-black))',
+          orange: 'hsl(var(--brand-gold))',
+          flame: 'hsl(var(--brand-bordeaux-bright))',
+        },
+        editorial: {
+          bg: 'hsl(var(--editorial-bg))',
+          pink: 'hsl(var(--editorial-pink))',
+          amber: 'hsl(var(--editorial-amber))',
         },
         footer: 'hsl(var(--footer-bg))',
       },
@@ -62,7 +78,16 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        bordeaux: '0 12px 32px rgba(139, 0, 32, 0.25)',
+        'card-hover': '0 20px 60px -15px rgba(10, 10, 12, 0.20)',
+        editorial: '0 30px 60px -25px rgba(10, 10, 12, 0.15), 0 8px 24px -8px rgba(10, 10, 12, 0.08)',
+        'editorial-hover':
+          '0 40px 80px -25px rgba(10, 10, 12, 0.22), 0 12px 32px -8px rgba(139, 0, 32, 0.1)',
+        gold: '0 8px 24px rgba(201, 169, 97, 0.25)',
       },
       keyframes: {
         'accordion-down': {
@@ -77,6 +102,10 @@ module.exports = {
           from: { transform: 'translateY(100%)', opacity: '0' },
           to: { transform: 'translateY(0)', opacity: '1' },
         },
+        'slide-down': {
+          from: { transform: 'translateY(-10px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
+        },
         'fade-in': {
           from: { opacity: '0' },
           to: { opacity: '1' },
@@ -85,18 +114,24 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-4px)' },
         },
-        'shimmer': {
+        shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        'pulse-soft': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.85', transform: 'scale(1.03)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'slide-up': 'slide-up 0.3s ease-out',
+        'slide-down': 'slide-down 0.2s ease-out',
         'fade-in': 'fade-in 0.3s ease-out',
         'bounce-slow': 'bounce-slow 1.8s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
+        shimmer: 'shimmer 2s linear infinite',
+        'pulse-soft': 'pulse-soft 2.5s ease-in-out infinite',
       },
     },
   },

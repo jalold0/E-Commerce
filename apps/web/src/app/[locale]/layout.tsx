@@ -28,33 +28,41 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    template: '%s · E-Commerce',
-    default: "E-Commerce — O'zbekistondagi eng yirik onlayn savdo platformasi",
+    template: '%s · Sellobay',
+    default: "Sellobay — O'zbekistondagi eng yirik marketplace",
   },
   description:
-    'Kiyim-kechak, poyabzal, atirlar, kosmetika va aksessuarlar. Asl mahsulotlar, tezkor yetkazib berish, 14 kun qaytarish.',
-  keywords: ['e-commerce', "o'zbekiston", 'onlayn savdo', 'kiyim', 'poyabzal', 'atir', 'kosmetika'],
+    "Minglab sotuvchilar, premium brendlar, tezkor yetkazib berish. O'zbekistondagi eng yirik marketplace — Sellobay.",
+  keywords: [
+    'sellobay',
+    'marketplace',
+    "o'zbekiston",
+    'onlayn savdo',
+    'kiyim',
+    'poyabzal',
+    'atir',
+    'kosmetika',
+  ],
   openGraph: {
     type: 'website',
-    siteName: 'E-Commerce',
+    siteName: 'Sellobay',
     locale: 'uz_UZ',
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
-  // PWA — app-style ko'rinish iOS Safari'da, Android Chrome'da
   appleWebApp: {
     capable: true,
-    title: 'E-Commerce',
+    title: 'Sellobay',
     statusBarStyle: 'default',
   },
-  applicationName: 'E-Commerce',
+  applicationName: 'Sellobay',
   formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0A0C' },
   ],
   width: 'device-width',
   initialScale: 1,

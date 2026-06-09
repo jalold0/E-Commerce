@@ -7,7 +7,7 @@ export function OrganizationJsonLd(_props: OrgProps = {}) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'E-Commerce Ekosistema',
+    name: 'Sellobay',
     url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
     logo: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/icon-512.png`,
     contactPoint: {
@@ -22,17 +22,10 @@ export function OrganizationJsonLd(_props: OrgProps = {}) {
       addressCountry: 'UZ',
       addressLocality: 'Toshkent',
     },
-    sameAs: [
-      'https://www.instagram.com/',
-      'https://www.facebook.com/',
-      'https://t.me/',
-    ],
+    sameAs: ['https://www.instagram.com/', 'https://www.facebook.com/', 'https://t.me/'],
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }
 
@@ -86,10 +79,7 @@ export function ProductJsonLd(p: ProductJsonLdProps) {
       : {}),
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }
 
@@ -110,9 +100,6 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
     })),
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }
