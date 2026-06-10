@@ -38,6 +38,9 @@
     "clean": {
       "cache": false
     },
+    "@ecom/database#build": {
+      "cache": false
+    },
     "@ecom/database#generate": {
       "cache": false,
       "outputs": ["node_modules/.prisma/**", "src/generated/**"]
