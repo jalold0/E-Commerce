@@ -4,6 +4,7 @@ import { FlatList, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useProducts } from '../../src/lib/hooks';
+import { type MockProduct } from '../../src/lib/mock-data';
 import { useWishlist } from '../../src/store/wishlist';
 import { Button } from '../../src/ui/button';
 import { EmptyState } from '../../src/ui/empty-state';
@@ -15,7 +16,7 @@ export default function WishlistScreen() {
   const ids = useWishlist((s) => s.ids);
   // Barcha mahsulotlar (jonli API) — sevimli id'lar bo'yicha filtrlаymiz
   const { data: allProducts = [] } = useProducts({ limit: 48 });
-  const items = allProducts.filter((p) => ids.includes(p.id));
+  const items = allProducts.filter((p: MockProduct) => ids.includes(p.id));
 
   return (
     <View className="bg-background flex-1" style={{ paddingTop: insets.top }}>

@@ -27,7 +27,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { discountPercent, formatMoney, pickLocalized } from '../../src/lib/format';
 import { useProduct, useProducts } from '../../src/lib/hooks';
-import { productImage } from '../../src/lib/mock-data';
+import { productImage, type MockProduct } from '../../src/lib/mock-data';
 import { useCart } from '../../src/store/cart';
 import { toast } from '../../src/store/toast';
 import { useWishlist } from '../../src/store/wishlist';
@@ -107,7 +107,7 @@ export default function ProductDetailScreen() {
   const isFootwear = product.categoryId === 'shoes' || product.categoryId === 'c2';
   const isClothing = product.categoryId === 'clothing' || product.categoryId === 'c1';
   const sizes = isFootwear ? SIZES_FOOTWEAR : isClothing ? SIZES_CLOTHING : [];
-  const related = relatedAll.filter((p) => p.id !== product.id).slice(0, 4);
+  const related = relatedAll.filter((p: MockProduct) => p.id !== product.id).slice(0, 4);
   const selectedColor = COLORS.find((c) => c.id === color);
 
   const onAdd = (buyNow = false) => {

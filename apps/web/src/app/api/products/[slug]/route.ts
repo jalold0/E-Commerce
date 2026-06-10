@@ -49,7 +49,7 @@ export async function GET(_req: NextRequest, { params }: { params: { slug: strin
       brand: product.brand,
       seller: product.seller ? { ...product.seller, rating: Number(product.seller.rating) } : null,
       images: product.images,
-      categories: product.categories.map((c) => c.category),
+      categories: product.categories.map((c: (typeof product.categories)[number]) => c.category),
     });
   } catch (err) {
     console.error('[api/products/[slug]] error:', err);

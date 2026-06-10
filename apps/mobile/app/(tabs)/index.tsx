@@ -5,7 +5,7 @@ import { FlatList, Image, Pressable, ScrollView, Text, View } from 'react-native
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useProducts } from '../../src/lib/hooks';
-import { brands, categories } from '../../src/lib/mock-data';
+import { brands, categories, type MockProduct } from '../../src/lib/mock-data';
 import { CategoryChip } from '../../src/ui/category-chip';
 import { ProductCard } from '../../src/ui/product-card';
 import { SectionHeader } from '../../src/ui/section-header';
@@ -25,7 +25,9 @@ export default function HomeScreen() {
   // Jonli API'dan (Neon DB) — xato bo'lsa mock fallback
   const { data: allProducts = [] } = useProducts({ sort: 'popularity', limit: 12 });
   const featured = allProducts.slice(0, 4);
-  const sale = allProducts.filter((p) => p.badge === 'SALE' || p.badge === 'TOP').slice(0, 6);
+  const sale = allProducts
+    .filter((p: MockProduct) => p.badge === 'SALE' || p.badge === 'TOP')
+    .slice(0, 6);
 
   return (
     <ScrollView
@@ -130,7 +132,7 @@ export default function HomeScreen() {
           actionHref="/catalog?sort=popularity"
         />
         <View className="flex-row flex-wrap gap-3 px-4">
-          {featured.map((p) => (
+          {featured.map((p: MockProduct) => (
             <View key={p.id} style={{ width: '47%' }}>
               <ProductCard product={p} />
             </View>
